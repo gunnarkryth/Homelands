@@ -3,7 +3,6 @@ import { AppBar, Menu, MenuItem, Toolbar } from "@mui/material";
 
 export const Nav = () => {
   return (
-    <AppBar position="static">
       <Toolbar>
         <MenuItem>
           <NavLink to="/">Forside</NavLink>
@@ -15,6 +14,5 @@ export const Nav = () => {
           <NavLink to="/login">Login</NavLink>
         </MenuItem>
       </Toolbar>
-    </AppBar>
   );
 };
