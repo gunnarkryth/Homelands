@@ -1,5 +1,9 @@
+import { Container } from "@mui/material";
+
 export const Footer = () => {
   return (
-    <footer></footer>
-  )
-}
+    <Container disableGutters>
+      <footer>AAAAAAAAAAAAAAAAA</footer>
+    </Container>
+  );
+};
