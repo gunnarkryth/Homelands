@@ -12,24 +12,34 @@ export const Footer = () => {
     <Container
       maxWidth=""
       disableGutters
-      sx={{ backgroundColor: "red", color: "white" }}
+      sx={{ backgroundColor: "primary.main", color: "secondary" }}
     >
       <Toolbar>
-        <Typography variant="h2" color="white">Homelands</Typography>
-        <ul style={{ listStyle: "none", color: "white" }}>
+        <Typography variant="h2" color="secondary.main">
+          Homelands
+        </Typography>
+        <ul style={{ listStyle: "none" }}>
           <li>
-            <Typography variant="body1">Øster Uttrupvej 5</Typography>
+            <Typography variant="body1" sx={{ color: "secondary.main" }}>
+              Øster Uttrupvej 5
+            </Typography>
           </li>
           <li>
-            <Typography variant="body1">9000 Aalborg</Typography>
+            <Typography variant="body1" sx={{ color: "secondary.main" }}>
+              9000 Aalborg
+            </Typography>
           </li>
         </ul>
         <ul style={{ listStyle: "none" }}>
           <li>
-            <Typography variant="body1">Email: info@homelands.dk</Typography>
+            <Typography variant="body1" sx={{ color: "secondary.main" }}>
+              Email: info@homelands.dk
+            </Typography>
           </li>
           <li>
-            <Typography variant="body1">Telefon: +45 11 22 33 44</Typography>
+            <Typography variant="body1" sx={{ color: "secondary.main" }}>
+              Telefon: +45 11 22 33 44
+            </Typography>
           </li>
         </ul>
         <ul style={{ listStyle: "none" }}>

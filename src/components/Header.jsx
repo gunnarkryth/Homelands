@@ -6,7 +6,7 @@ import { SearchBar } from "./SearchBar";
 export const Header = () => {
   return (
     <AppBar position="sticky">
-      <Container>
+      <Container maxWidth="" disableGutters>
         <Toolbar>
           <Logo />
           <Nav />
