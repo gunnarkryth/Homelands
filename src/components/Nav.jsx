@@ -1,18 +1,20 @@
 import { NavLink } from "react-router-dom";
-import { Menu, MenuItem, AppBar } from "@mui/material";
+import { AppBar, Menu, MenuItem, Toolbar } from "@mui/material";
 
 export const Nav = () => {
   return (
-    <Menu>
-      <MenuItem>
-        <NavLink>Forside</NavLink>
-      </MenuItem>
-      <MenuItem>
-        <NavLink>Boliger til salg</NavLink>
-      </MenuItem>
-      <MenuItem>
-        <NavLink>Login</NavLink>
-      </MenuItem>
-    </Menu>
+    <AppBar position="static">
+      <Toolbar>
+        <MenuItem>
+          <NavLink to="/">Forside</NavLink>
+        </MenuItem>
+        <MenuItem>
+          <NavLink to="/boliger">Boliger til salg</NavLink>
+        </MenuItem>
+        <MenuItem>
+          <NavLink to="/login">Login</NavLink>
+        </MenuItem>
+      </Toolbar>
+    </AppBar>
   );
 };
