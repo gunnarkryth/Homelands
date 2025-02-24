@@ -1,11 +1,14 @@
+import { AppBar } from "@mui/material";
 import { Logo } from "./Logo";
+import { Nav } from "./Nav";
 import { SearchBar } from "./SearchBar";
 
 export const Header = () => {
   return (
-    <header>
+    <AppBar>
       <Logo />
+      <Nav />
       <SearchBar />
-    </header>
+    </AppBar>
   );
 };
