@@ -1,7 +1,5 @@
-import { TextField } from "@mui/material"
+import { TextField } from "@mui/material";
 
 export const SearchBar = () => {
-  return (
-<TextField></TextField>
-  )
-}
+  return <TextField></TextField>;
+};
