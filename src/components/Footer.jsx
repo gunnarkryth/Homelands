@@ -1,39 +1,37 @@
-import { Container, Toolbar, MenuItem, Typography } from "@mui/material";
+import {
+  Container,
+  Toolbar,
+  MenuItem,
+  Typography,
+  AppBar,
+} from "@mui/material";
 import { Logo } from "./Logo";
 
 export const Footer = () => {
   return (
-    <Container disableGutters sx={{ backgroundColor: "red", color: "white" }}>
+    <Container
+      maxWidth=""
+      disableGutters
+      sx={{ backgroundColor: "red", color: "white" }}
+    >
       <Toolbar>
-        <Logo />
-        <MenuItem>
-          <ul style={{ listStyle: "none" }}>
-            <li>
-              <Typography variant="body1" color="initial">
-                Øster Uttrupvej 5
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body1" color="initial">
-                9000 Aalborg
-              </Typography>
-            </li>
-          </ul>
-        </MenuItem>
-        <MenuItem>
-          <ul style={{ listStyle: "none" }}>
-            <li>
-              <Typography variant="body1" color="initial">
-                Email: info@homelands.dk
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body1" color="initial">
-                Telefon: +45 11 22 33 44
-              </Typography>
-            </li>
-          </ul>
-        </MenuItem>
+        <Typography variant="h2" color="white">Homelands</Typography>
+        <ul style={{ listStyle: "none", color: "white" }}>
+          <li>
+            <Typography variant="body1">Øster Uttrupvej 5</Typography>
+          </li>
+          <li>
+            <Typography variant="body1">9000 Aalborg</Typography>
+          </li>
+        </ul>
+        <ul style={{ listStyle: "none" }}>
+          <li>
+            <Typography variant="body1">Email: info@homelands.dk</Typography>
+          </li>
+          <li>
+            <Typography variant="body1">Telefon: +45 11 22 33 44</Typography>
+          </li>
+        </ul>
         <ul style={{ listStyle: "none" }}>
           <li>
             <svg
