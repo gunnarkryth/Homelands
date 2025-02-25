@@ -14,7 +14,7 @@ export const Footer = () => {
       disableGutters
       sx={{ backgroundColor: "primary.main", color: "secondary" }}
     >
-      <Toolbar>
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography variant="h2" color="secondary.main">
           Homelands
         </Typography>
@@ -42,7 +42,14 @@ export const Footer = () => {
             </Typography>
           </li>
         </ul>
-        <ul style={{ listStyle: "none" }}>
+        <ul
+          style={{
+            listStyle: "none",
+            display: "flex",
+            justifyContent: "space-between",
+            gap: "1rem",
+          }}
+        >
           <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
