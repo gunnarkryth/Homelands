@@ -12,8 +12,12 @@ export const MainTheme = createTheme({
       primary: "#000000",
       secondary: "#ffffff",
     },
+    accent: {
+      primary: "#AF7627",
+      secondary: "#FED9C9",
+    },
   },
   typography: {
-    fontFamily: ["Odibee"].join(","),
+    fontFamily: ["Odibee", "sans-serif"].join(","),
   },
 });
