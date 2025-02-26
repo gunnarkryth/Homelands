@@ -9,7 +9,7 @@ export const Header = () => {
       position="sticky"
       sx={{
         backgroundColor: "none",
-        backgroundImage: "src/assets/images/header.png",
+        backgroundImage: ,
       }}
     >
       <Container maxWidth="" disableGutters>
