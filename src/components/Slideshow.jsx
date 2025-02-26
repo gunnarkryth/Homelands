@@ -27,6 +27,11 @@ export const Slideshow = () => {
 
   return (
     <Box>
+      <img
+        src={lastThreeImages[currentIndex].image[0]}
+        alt={lastThreeImages[currentIndex].description}
+        style={{ width: "100%", height: "auto" }}
+      />
       <IconButton aria-label="" onClick={handleNext}>
         <ArrowForwardIosIcon />
       </IconButton>
