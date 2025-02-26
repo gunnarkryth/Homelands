@@ -53,7 +53,7 @@ export const Slideshow = () => {
       sx={{
         position: "relative",
         width: "100%",
-        height: "700px",
+        height: "600px",
         overflow: "hidden",
       }}
     >

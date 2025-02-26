@@ -53,7 +53,7 @@ export const Slideshow = () => {
       sx={{
         position: "relative",
         width: "100%",
-        height: "700px",
+        height: "400px", // constant height
         overflow: "hidden",
       }}
     >
@@ -63,7 +63,7 @@ export const Slideshow = () => {
         style={{
           width: "100%",
           height: "100%",
-          objectFit: "cover",
+          objectFit: "cover", // Ensures the image covers the container
         }}
       />
       <Box
@@ -75,13 +75,13 @@ export const Slideshow = () => {
           display: "flex",
           justifyContent: "space-between",
           transform: "translateY(-50%)",
-          px: 2,
+          px: 2, // some horizontal padding
         }}
       >
         <IconButton
           aria-label="Forrige billede"
           onClick={handlePrev}
-          sx={{ color: "white" }}
+          sx={{ color: "white" }} // make arrow white
         >
           <ArrowForwardIosIcon
             sx={{ color: "white", fontSize: 40 }}

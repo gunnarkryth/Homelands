@@ -53,7 +53,7 @@ export const Slideshow = () => {
       sx={{
         position: "relative",
         width: "100%",
-        height: "700px",
+        height: "400px", // constant height
         overflow: "hidden",
       }}
     >
@@ -63,7 +63,7 @@ export const Slideshow = () => {
         style={{
           width: "100%",
           height: "100%",
-          objectFit: "cover",
+          objectFit: "cover", // Ensures the image covers the container
         }}
       />
       <Box
