@@ -16,7 +16,14 @@ export const Slideshow = () => {
   }, [request]);
 
   if (loading) return <CircularProgress color="accent.primary" />;
-  if (error) return <Typography variant="h3">Fejl: {error}</Typography>;
+  if (error) return <Typography variant="h3">Fejl: {error.message}</Typography>;
+  if (!data || !data.items) return null;
+
+  const lastThreeImages = data.items.slice(-3);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % lastThreeImages.length);
+  };
 
   return (
     <Box>
