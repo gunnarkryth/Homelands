@@ -49,22 +49,11 @@ export const Slideshow = () => {
   };
 
   return (
-    <Box
-      sx={{
-        position: "relative",
-        width: "100%",
-        height: "400px", // constant height
-        overflow: "hidden",
-      }}
-    >
+    <Box sx={{ position: "relative", width: "100%" }}>
       <img
         src={lastThreeImages[currentIndex]?.image?.[0]}
         alt={lastThreeImages[currentIndex]?.description || "Billede"}
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover", // Ensures the image covers the container
-        }}
+        style={{ width: "100%", height: "auto" }}
       />
       <Box
         sx={{
@@ -75,25 +64,13 @@ export const Slideshow = () => {
           display: "flex",
           justifyContent: "space-between",
           transform: "translateY(-50%)",
-          px: 2, // some horizontal padding
         }}
       >
-        <IconButton
-          aria-label="Forrige billede"
-          onClick={handlePrev}
-          sx={{ color: "white" }} // make arrow white
-        >
-          <ArrowForwardIosIcon
-            sx={{ color: "white", fontSize: 40 }}
-            style={{ transform: "rotate(180deg)" }}
-          />
+        <IconButton aria-label="Forrige billede" onClick={handlePrev}>
+          <ArrowForwardIosIcon style={{ transform: "rotate(180deg)" }} />
         </IconButton>
-        <IconButton
-          aria-label="Næste billede"
-          onClick={handleNext}
-          sx={{ color: "white" }} // make arrow white
-        >
-          <ArrowForwardIosIcon sx={{ color: "white", fontSize: 40 }} />
+        <IconButton aria-label="Næste billede" onClick={handleNext}>
+          <ArrowForwardIosIcon />
         </IconButton>
       </Box>
     </Box>
