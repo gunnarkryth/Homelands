@@ -3,8 +3,11 @@ import useFetch from "../hooks/useFetch";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 export const Slideshow = () => {
+  const { data, loading, error, request } = useFetch();
 
-  const = {data,loading, error} = useFetch()
+  const handleGet = () => {
+    request("https://api.mediehuset.net/homelands/images");
+  };
 
   return (
     <Box>
