@@ -14,7 +14,7 @@ export const SearchBar = () => {
         onChange={(event) => setSearchWord(event.target.value)}
       ></TextField>
       <IconButton>
-        <NavLink to={`/search/${searchWord}`}></NavLink>
+        <NavLink to="/search/${searchWord}"></NavLink>
       </IconButton>
     </Box>
   );

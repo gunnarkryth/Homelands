@@ -1,6 +1,5 @@
 import { Box, TextField, IconButton } from "@mui/material";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
 
 export const SearchBar = () => {
   const [searchWord, setSearchWord] = useState();
@@ -13,9 +12,7 @@ export const SearchBar = () => {
         value={searchWord}
         onChange={(event) => setSearchWord(event.target.value)}
       ></TextField>
-      <IconButton>
-        <NavLink to={`/search/${searchWord}`}></NavLink>
-      </IconButton>
+      <IconButton />
     </Box>
   );
 };
