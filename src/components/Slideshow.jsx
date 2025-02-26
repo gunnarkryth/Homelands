@@ -1,4 +1,4 @@
-import { Box, CircularProgress, IconButton } from "@mui/material";
+import { Box, CircularProgress, IconButton, Typography } from "@mui/material";
 import useFetch from "../hooks/useFetch";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useEffect, useState } from "react";
@@ -16,6 +16,7 @@ export const Slideshow = () => {
   }, [request]);
 
   if (loading) return <CircularProgress color="accent.primary" />;
+  if (error) return <Typography variant="h3">Fejl: {error}</Typography>;
 
   return (
     <Box>
