@@ -6,15 +6,14 @@ import { SearchBar } from "./SearchBar";
 export const Header = () => {
   return (
     <AppBar
-      backgroundColor="none"
       position="sticky"
       sx={{
         backgroundColor: "none",
         backgroundImage: "src/assets/images/header.png",
       }}
     >
-      <Container backgroundColor="none" maxWidth="" disableGutters>
-        <Toolbar backgroundColor="none">
+      <Container backgroundColor maxWidth="" disableGutters>
+        <Toolbar>
           <Logo />
           <Nav />
           <SearchBar />

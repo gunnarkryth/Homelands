@@ -6,7 +6,6 @@ import { SearchBar } from "./SearchBar";
 export const Header = () => {
   return (
     <AppBar
-      backgroundColor="none"
       position="sticky"
       sx={{
         backgroundColor: "none",
