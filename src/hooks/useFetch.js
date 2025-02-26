@@ -1,34 +1,41 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-function useFetch(url, options) {
+function useApi() {
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    if (!url) return;
-
+  // request function to perform any HTTP action
+  const request = async (
+    url,
+    { method = "GET", body = null, headers = {} } = {}
+  ) => {
     setLoading(true);
     setError(null);
+    try {
+      const options = {
+        method,
+        headers: { "Content-Type": "application/json", ...headers },
+      };
+      if (body) {
+        options.body = JSON.stringify(body);
+      }
+      const response = await fetch(url, options);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const result = await response.json();
+      setData(result);
+      return result;
+    } catch (err) {
+      setError(err);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((json) => {
-        setData(json);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err);
-        setLoading(false);
-      });
-  }, [url, options]);
-
-  return { data, loading, error };
+  return { data, loading, error, request };
 }
 
-export default useFetch;
+export default useApi;
