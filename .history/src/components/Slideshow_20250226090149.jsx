@@ -1,4 +1,5 @@
 import { Box, CircularProgress, IconButton, Typography } from "@mui/material";
+import useFetch from "../hooks/useFetch";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useEffect, useState, useCallback } from "react";
 
@@ -6,6 +7,8 @@ export const Slideshow = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  //Liste af billeder
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const request = useCallback(async (url, options) => {
@@ -18,20 +21,14 @@ export const Slideshow = () => {
       }
       const result = await response.json();
       setData(result);
+      return result;
     } catch (err) {
       setError(err);
+      throw err;
     } finally {
       setLoading(false);
     }
   }, []);
-
-  useEffect(() => {
-    request("https://api.mediehuset.net/homelands/images");
-  }, [request]);
-
-  if (loading) return <CircularProgress color="primary" />;
-  if (error) return <Typography variant="h3">Fejl: {error.message}</Typography>;
-  if (!data || !data.items) return null; // 🔥 Prevents crashes if `data` is still `null`
 
   const lastThreeImages = data.items.slice(-3);
 
@@ -42,34 +39,13 @@ export const Slideshow = () => {
   return (
     <Box>
       <img
-        src={lastThreeImages[currentIndex]?.image?.[0]}
-        alt={lastThreeImages[currentIndex]?.description || "Billede"}
+        src={lastThreeImages[currentIndex].image[0]}
+        alt={lastThreeImages[currentIndex].description}
         style={{ width: "100%", height: "auto" }}
       />
-      <Box>
-        <IconButton
-          aria-label="Forrige billede"
-          onClick={() =>
-            setCurrentIndex(
-              (prevIndex) =>
-                (prevIndex - 1 + lastThreeImages.length) %
-                lastThreeImages.length
-            )
-          }
-        >
-          <ArrowForwardIosIcon style={{ transform: "rotate(180deg)" }} />
-        </IconButton>
-        <IconButton
-          aria-label="Næste billede"
-          onClick={() =>
-            setCurrentIndex(
-              (prevIndex) => (prevIndex + 1) % lastThreeImages.length
-            )
-          }
-        >
-          <ArrowForwardIosIcon />
-        </IconButton>
-      </Box>
+      <IconButton aria-label="" onClick={handleNext}>
+        <ArrowForwardIosIcon />
+      </IconButton>
     </Box>
   );
 };

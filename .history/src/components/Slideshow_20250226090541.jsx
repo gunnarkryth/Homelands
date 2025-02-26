@@ -48,18 +48,6 @@ export const Slideshow = () => {
       />
       <Box>
         <IconButton
-          aria-label="Forrige billede"
-          onClick={() =>
-            setCurrentIndex(
-              (prevIndex) =>
-                (prevIndex - 1 + lastThreeImages.length) %
-                lastThreeImages.length
-            )
-          }
-        >
-          <ArrowForwardIosIcon style={{ transform: "rotate(180deg)" }} />
-        </IconButton>
-        <IconButton
           aria-label="Næste billede"
           onClick={() =>
             setCurrentIndex(
@@ -69,6 +57,7 @@ export const Slideshow = () => {
         >
           <ArrowForwardIosIcon />
         </IconButton>
+        
       </Box>
     </Box>
   );

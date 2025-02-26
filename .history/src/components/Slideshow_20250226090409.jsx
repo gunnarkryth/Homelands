@@ -47,28 +47,10 @@ export const Slideshow = () => {
         style={{ width: "100%", height: "auto" }}
       />
       <Box>
-        <IconButton
-          aria-label="Forrige billede"
-          onClick={() =>
-            setCurrentIndex(
-              (prevIndex) =>
-                (prevIndex - 1 + lastThreeImages.length) %
-                lastThreeImages.length
-            )
-          }
-        >
-          <ArrowForwardIosIcon style={{ transform: "rotate(180deg)" }} />
-        </IconButton>
-        <IconButton
-          aria-label="Næste billede"
-          onClick={() =>
-            setCurrentIndex(
-              (prevIndex) => (prevIndex + 1) % lastThreeImages.length
-            )
-          }
-        >
-          <ArrowForwardIosIcon />
-        </IconButton>
+
+      <IconButton aria-label="Næste billede" onClick={handleNext}>
+        <ArrowForwardIosIcon />
+      </IconButton>
       </Box>
     </Box>
   );
