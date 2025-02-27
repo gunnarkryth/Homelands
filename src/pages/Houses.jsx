@@ -5,7 +5,7 @@ import { HousingCard } from "../components/HousingCard";
 import { useParams } from "react-router";
 import { findValuesInObject } from "../helpers/findValuesInObject";
 
-export const HousingPage = () => {
+export const Houses = () => {
   const [houseData, setHouseData] = useState();
 
   const { keyword } = useParams();
@@ -34,7 +34,7 @@ export const HousingPage = () => {
       <Typography textAlign="center" margin="2vh" variant="h3">
         Housing Page
       </Typography>
-      <Grid container rowSpacing="1" columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+      <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {houseData?.items?.map((item) => {
           return (
             <Grid size={4} key={item.id}>
