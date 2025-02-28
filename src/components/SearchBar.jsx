@@ -10,8 +10,9 @@ export const SearchBar = () => {
   return (
     <Box display={"flex"} alignContent={"center"} justifyContent={"center"}>
       <TextField
+        sx={{ backgroundColor: "#101010", color: "secondary.main" }}
         type="search"
-        variant="standard"
+        variant="outlined"
         label="Search"
         name="search"
         id="search-field"

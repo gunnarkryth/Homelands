@@ -3,7 +3,7 @@ import { MenuItem, Toolbar, Typography } from "@mui/material";
 
 export const Nav = () => {
   return (
-    <Toolbar>
+    <Toolbar sx={{ backgroundColor: "none" }}>
       <MenuItem>
         <NavLink to="/" style={{ textDecoration: "none" }}>
           <Typography variant="h4" color="secondary.main">
