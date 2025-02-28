@@ -9,6 +9,11 @@ import {
 import PropTypes from "prop-types";
 
 export const HousingCard = ({ item }) => {
+  const danishPrice = new Intl.NumberFormat("da-DK", {
+    style: "currency",
+    currency: "DKK",
+  }).format(item.price);
+
   return (
     <Grid item>
       <Card>
@@ -20,11 +25,11 @@ export const HousingCard = ({ item }) => {
         <CardContent>
           <Typography variant="h5">{item.address}</Typography>
           <Box display="flex" flex="1" flexDirection="column">
-            <Typography variant="p">
+            <Typography variant="body1">
               {item.zipcode} {item.city}
             </Typography>
-            <Typography variant="p">{item.floor_space} m²</Typography>
-            <Typography variant="p">{item.price} DKK</Typography>
+            <Typography variant="body1">{item.floor_space} m²</Typography>
+            <Typography variant="body1">{danishPrice}</Typography>
           </Box>
         </CardContent>
       </Card>

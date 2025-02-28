@@ -19,8 +19,8 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
             <Route path="boliger" element={<Houses />} />
+            <Route path="/search/:keyword" element={<Houses />} />
             <Route path="bolig-detaljer" element={<HouseDetails />} />
-            {/* <Route path={search/${searchWord}} element={<HouseDetails />} /> */}
             <Route path="login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
           </Route>
