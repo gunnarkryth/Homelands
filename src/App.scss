@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Odibee";
+  src: url(assets/fonts/OdibeeSans-Regular.ttf);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+* {
+  font-family: Odibee sans-serif;
+}
+
+a {
+  color: white;
+}
